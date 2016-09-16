@@ -1,0 +1,30 @@
+task compile << {
+  println 'compiling source'
+}
+
+task compileTest(dependsOn: compile) << {
+  println 'compiling unit tests'
+}
+
+task dotest(dependsOn: [compile, compileTest]) << {
+  println 'running unit tests'
+}
+
+task dist(dependsOn: [compile, dotest]) << {
+  println 'building the distribution'
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '3.0'
+}
+
+apply plugin: 'java'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+
+  testCompile group: 'junit', name: 'junit', version: '4.+'
+}
