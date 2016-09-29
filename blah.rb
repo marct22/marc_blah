@@ -1,4 +1,5 @@
 imIn = __dir__
 puts imIn
-checkDir = File.dirname(imIn + "/../..")
+bDir = imIn + "/../.."
+checkDir = File.dirname(bDir)
 puts checkDir
