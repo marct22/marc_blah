@@ -1,4 +1,3 @@
-jdir = "/jobs"
 
 def findJenkinsWorkspace (myPath, spath)
   ddDir = myPath + "/.."
@@ -20,9 +19,13 @@ imIn = __dir__
 puts imIn
 jobname = File.basename(imIn)
 puts "jenkins jobname = " + jobname
-subpath = findJenkinsWorkspace(imIn, jobname)  
-puts "partial path is #{subpath}"
+getPathInfo = findJenkinsWorkspace(imIn, jobname)  
+# puts "partial path is #{subpath}"
   
-
-
+# splitting subpath, as it has the path to jobs
+(jenkRoot, subpath) = getPathInfo.split(":")
+puts "Jenkins root is #{jenkRoot}"
+puts "subpath is #{subpath}"
+jobPath = jenkRoot + "/jobs/" + subpath  
+puts "job path is #{jobPath}"
 
