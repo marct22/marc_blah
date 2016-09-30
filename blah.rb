@@ -2,7 +2,7 @@ jdir = "/jobs"
 
 imIn = __dir__
 puts imIn
-ppath = Dir.basename(imIn)
+ppath = File.basename(imIn)
 puts ppath
 dotsDir = imIn + "/../.."
 puts dotsDir
