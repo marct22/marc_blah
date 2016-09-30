@@ -2,6 +2,8 @@ jdir = "/jobs"
 
 imIn = __dir__
 puts imIn
+ppath = Dir.basename(imIn)
+puts ppath
 dotsDir = imIn + "/../.."
 puts dotsDir
 expDir = File.expand_path(dotsDir)
