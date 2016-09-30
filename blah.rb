@@ -1,4 +1,4 @@
-jdir = "/.jenkins"
+jdir = "/jobs"
 
 imIn = __dir__
 puts imIn
