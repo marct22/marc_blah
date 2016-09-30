@@ -2,13 +2,23 @@ jdir = "/jobs"
 
 imIn = __dir__
 puts imIn
-ppath = File.basename(imIn)
-puts ppath
+jobname = File.basename(imIn)
+puts jobname
 dotsDir = imIn + "/../.."
 puts dotsDir
 expDir = File.expand_path(dotsDir)
-puts "hopefully, this will change "
 puts expDir
+subdir = File.basename(expDir)
+puts subdir
+subpath = subdir + "/" + jobname
+if subdir != "workspace"
+  dotsDir = expDir + "/.."
+  expDir = File.expand_path(dotsDir)
+  subdir = File.basename(expDir)
+  subpath = subdir + "/" + subpath
+  
+end
+puts subpath
 
 checkDir = Dir.exists?(expDir + jdir)
 puts checkDir
